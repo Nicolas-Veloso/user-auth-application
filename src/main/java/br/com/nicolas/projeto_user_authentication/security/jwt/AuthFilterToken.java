@@ -53,5 +53,6 @@ public class AuthFilterToken extends OncePerRequestFilter {
         if (StringUtils.hasText(headerToken) && headerToken.startsWith("Bearer")) {
             return headerToken.replace("Bearer ", "");
         }
+        return null;
     }
 }
