@@ -5,8 +5,8 @@ import org.springframework.beans.BeanUtils;
 
 public class UserDTO {
 
-    public Long getId() {
-        return id;
+    public UserDTO(UserEntity userEntity) {
+        BeanUtils.copyProperties(userEntity, this);
     }
 
     public UserDTO() {
@@ -23,8 +23,8 @@ public class UserDTO {
 
     private String password;
 
-    public UserDTO(UserEntity userEntity) {
-        BeanUtils.copyProperties(userEntity, this);
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
